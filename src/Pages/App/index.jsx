@@ -7,6 +7,7 @@ import MyOrder from '../MyOrder';
 import MyOrders from '../MyOrders';
 import NotFound from '../NotFound';
 import SingIn from '../SingIn';
+import Navbar from '../../Components/Navbar';
 import './App.css';
 
 
@@ -31,6 +32,7 @@ const App = () => {
     //A la funcion contenedora de rutas
     <BrowserRouter>
       <AppRoutes />
+      <Navbar/>
     </BrowserRouter>
   )
 }
