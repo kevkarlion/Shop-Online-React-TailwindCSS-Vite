@@ -25,7 +25,7 @@ const AppRoutes = () => {
 }
 
 
-const App = () => {  
+const App = () => {   
   return (
 
     //Envuelvo en BrowserRouter 

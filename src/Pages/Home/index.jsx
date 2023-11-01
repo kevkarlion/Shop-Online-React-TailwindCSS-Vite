@@ -1,5 +1,5 @@
 import Layout from "../../Components/Navbar/Layout";
-
+import Card from "../../Components/Card";
 
 function Home() {
 
@@ -8,6 +8,7 @@ function Home() {
     <>
       <Layout>
         Home!
+        <Card />
       </Layout>
       
     </>
