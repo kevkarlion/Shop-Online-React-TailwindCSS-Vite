@@ -1,12 +1,13 @@
+import Layout from "../../Components/Navbar/Layout";
 
 function NotFound() {
 
 
     return (
       <>
-        <div className='bg-emerald-800	'>
-            NotFound!
-        </div>
+         <Layout>
+          NotFound!
+        </Layout>
         
       </>
     )

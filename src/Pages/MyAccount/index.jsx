@@ -1,12 +1,13 @@
+import Layout from "../../Components/Navbar/Layout";
 
 function MyAccount() {
 
 
     return (
       <>
-        <div className='bg-emerald-800	'>
-        MyAccount!
-        </div>
+        <Layout>
+          MyAccount!
+        </Layout>
         
       </>
     )

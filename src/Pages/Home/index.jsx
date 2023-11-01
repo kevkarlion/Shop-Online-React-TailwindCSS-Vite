@@ -1,12 +1,14 @@
+import Layout from "../../Components/Navbar/Layout";
+
 
 function Home() {
 
 
   return (
     <>
-      <div className='bg-emerald-800	'>
+      <Layout>
         Home!
-      </div>
+      </Layout>
       
     </>
   )

@@ -1,12 +1,13 @@
+import Layout from "../../Components/Navbar/Layout";
 
 function SingIn() {
 
 
     return (
       <>
-        <div className='bg-emerald-800	'>
-            SingIn!
-        </div>
+        <Layout>
+          SingIn!
+        </Layout>
         
       </>
     )

@@ -1,12 +1,13 @@
+import Layout from "../../Components/Navbar/Layout";
 
 function MyOrders() {
 
 
     return (
       <>
-        <div className='bg-emerald-800	'>
-            MyOrders!
-        </div>
+        <Layout>
+          MyOrders!
+        </Layout>
         
       </>
     )
