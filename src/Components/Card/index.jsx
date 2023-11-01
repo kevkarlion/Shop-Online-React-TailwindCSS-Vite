@@ -1,3 +1,5 @@
+import Api from "../../API";
+
 const Card = () => {
     return (
         <div className="bg-white cursor-pointer w-56 h-60 rounded-lg">
@@ -12,7 +14,9 @@ const Card = () => {
                 <span className="text-sm font-ligth">Headphones</span>
                 <span className="text-lg font-medium">$300</span>
             </p>
+            <Api />
         </div>
+       
     )
 }
 
