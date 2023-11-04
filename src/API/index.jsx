@@ -1,12 +1,13 @@
 //API Products Cards
 
 import { useEffect, useState } from "react";
+// import { Card } from '../Components/Card';
 
 const API = 'https://fakestoreapi.com/products';
 
 
 
-const Api = () => {
+const useApi = () => {
     
     const [items, setItems] = useState([]);
 
@@ -23,9 +24,7 @@ const Api = () => {
         miApi();
     }, []);
 
-    return (
-        console.log(items)
-    );
+    return items;
 }   
 
-export default Api;
+export default useApi;
