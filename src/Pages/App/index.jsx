@@ -8,6 +8,7 @@ import MyOrders from '../MyOrders';
 import NotFound from '../NotFound';
 import SingIn from '../SingIn';
 import Navbar from '../../Components/Navbar';
+import { MiContextProvider } from '../../Components/Context'
 import './App.css';
 
 
@@ -30,11 +31,13 @@ const App = () => {
 
     //Envuelvo en BrowserRouter 
     //A la funcion contenedora de rutas
-    <BrowserRouter>
-      <AppRoutes />
-      <Navbar/>
-    </BrowserRouter>
-  )
+    <MiContextProvider>
+      <BrowserRouter>
+        <AppRoutes />
+        <Navbar/>
+      </BrowserRouter>
+    </MiContextProvider>
+  ) 
 }
 
 export default App
