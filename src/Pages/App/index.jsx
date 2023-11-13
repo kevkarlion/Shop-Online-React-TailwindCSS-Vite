@@ -8,6 +8,7 @@ import MyOrders from '../MyOrders';
 import NotFound from '../NotFound';
 import SingIn from '../SingIn';
 import Navbar from '../../Components/Navbar';
+
 import { MiContextProvider } from '../../Components/Context'
 import './App.css';
 
@@ -20,7 +21,8 @@ const AppRoutes = () => {
     { path: '/my-order', element: <MyOrder />},
     { path: '/my-orders', element: <MyOrders />},
     { path: '/*', element: <NotFound />},
-    { path: '/sing-in', element: <SingIn />}
+    { path: '/sing-in', element: <SingIn />},
+
   ])
   return routes
 }

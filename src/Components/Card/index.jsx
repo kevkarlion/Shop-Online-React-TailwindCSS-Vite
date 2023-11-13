@@ -8,6 +8,11 @@ const Card = () => {
   const items = useApi();
   const context = useContext(MiContext);
 
+  function addToCart(product){
+    context.setCountCart(context.countCart + 1); 
+    context.addProduct(product);
+  }
+
   return (
     <div className="grid gap-4 grid-cols-4 h-auto">
       {items.map((item) => (
@@ -26,7 +31,7 @@ const Card = () => {
             />
             <div
               className="absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1"
-              onClick={() => context.setCountCart(context.countCart + 1)}
+              onClick={()=> addToCart(item)}
             >
               +
             </div>

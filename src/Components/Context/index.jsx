@@ -13,12 +13,27 @@ export const MiContext = createContext();
 // eslint-disable-next-line react/prop-types
 export const MiContextProvider = ({ children })=> {
 
+    //Count add to cart
     const [countCart, setCountCart] = useState(0);
+
+    //item add to cart
+    const [item, setItem] = useState([]);
+
     console.log(countCart);
+    console.log(item);
+
+    function addProduct(product){
+        const newArray = [...item, product];
+        setItem(newArray);
+    }
+    
     return (
         <MiContext.Provider value={{
             countCart,
-            setCountCart
+            setCountCart,
+            item,
+            setItem,
+            addProduct
         }}>
             { children }
         </MiContext.Provider>
