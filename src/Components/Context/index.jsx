@@ -22,9 +22,15 @@ export const MiContextProvider = ({ children })=> {
     console.log(countCart);
     console.log(item);
 
+
+    //Add product a product detail
     function addProduct(product){
         const newArray = [...item, product];
         setItem(newArray);
+    }
+
+    function increaseCountCart (){
+        setCountCart(countCart + 1);
     }
     
     return (
@@ -33,7 +39,8 @@ export const MiContextProvider = ({ children })=> {
             setCountCart,
             item,
             setItem,
-            addProduct
+            addProduct,
+            increaseCountCart
         }}>
             { children }
         </MiContext.Provider>

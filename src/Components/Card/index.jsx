@@ -9,12 +9,12 @@ const Card = () => {
   const context = useContext(MiContext);
 
   function addToCart(product){
-    context.setCountCart(context.countCart + 1); 
+    context.increaseCountCart(); 
     context.addProduct(product);
   }
 
   return (
-    <div className="grid gap-4 grid-cols-4 h-auto">
+    <div className="grid gap-4 grid-cols-4 h-auto w-auto mr-2">
       {items.map((item) => (
         <div
           key={item.id}

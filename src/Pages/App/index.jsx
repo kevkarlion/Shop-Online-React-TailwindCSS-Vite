@@ -8,7 +8,7 @@ import MyOrders from '../MyOrders';
 import NotFound from '../NotFound';
 import SingIn from '../SingIn';
 import Navbar from '../../Components/Navbar';
-
+// import { ProductDetail } from '../../Components/ProductDetail';
 import { MiContextProvider } from '../../Components/Context'
 import './App.css';
 
@@ -17,6 +17,8 @@ import './App.css';
 const AppRoutes = () => {
   let routes = useRoutes ([
     { path: '/', element: <Home />},
+    // { path: '/', element: <ProductDetail />},
+
     { path: '/my-account', element: <MyAccount />},
     { path: '/my-order', element: <MyOrder />},
     { path: '/my-orders', element: <MyOrders />},

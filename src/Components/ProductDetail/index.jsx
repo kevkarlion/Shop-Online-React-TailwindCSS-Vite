@@ -5,18 +5,23 @@ import './styles.css'
 
 export const ProductDetail = ()=> {
     const context = useContext(MiContext);
+
+    
+
     return (
-        <nav className="side-nav flex flex-col w-56 h-full fixed right-0">
-            <figure>
-                <span></span>
-                <img src="" alt="" />
-            </figure>
-            <div>
-                <p>
-                </p>
-                <p>
-                </p>
-            </div>
-        </nav>
+        <div className="content-side-nav">
+            <nav className="side-nav">
+                <figure>
+                    <span>Hola</span>
+                    <img src="" alt="" />
+                </figure>
+                <div>
+                    <p>
+                    </p>
+                    <p>
+                    </p>
+                </div>
+            </nav>
+        </div>
     )
 }
