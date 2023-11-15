@@ -1,16 +1,19 @@
 .content-side-nav {
     position: fixed;
+    height: 100vh;
+    border: 1px solid black;
+    border-radius: 6px;
+
     right: 0;
     z-index: 3;
     background-color: white;
+    overflow: auto;
+    padding-bottom: 80px;
 }
 
 .side-nav{
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
-    border-radius: 6px;
-    width: 300px;
-    height: 100vh;
+    width: 310px;
 }
 
