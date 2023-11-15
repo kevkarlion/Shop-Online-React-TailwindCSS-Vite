@@ -19,9 +19,6 @@ export const MiContextProvider = ({ children })=> {
     //item add to cart
     const [items, setItems] = useState([]);
 
-    console.log(countCart);
-    console.log(items);
-
 
     //Add product a product detail
     function addProduct(product){
@@ -29,8 +26,19 @@ export const MiContextProvider = ({ children })=> {
         setItems(newArray);
     }
 
+    //Incrementa el contador del carrito
     function increaseCountCart (){
         setCountCart(countCart + 1);
+    }
+
+    
+
+    //borra un elemento de la orden
+    function deletedProduct(itemDeleted){
+        const newArray = [...items];
+        const index = newArray.findIndex((item)=>(item  === itemDeleted));
+        newArray.splice(index, 1);
+        setItems(newArray);
     }
     
     return (
@@ -40,7 +48,8 @@ export const MiContextProvider = ({ children })=> {
             items,
             setItems,
             addProduct,
-            increaseCountCart
+            increaseCountCart,
+            deletedProduct
         }}>
             { children }
         </MiContext.Provider>

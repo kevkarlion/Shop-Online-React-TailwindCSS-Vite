@@ -8,8 +8,8 @@ const Card = () => {
   const items = useApi();
   const context = useContext(MiContext);
 
-  function addToCart(product){
-    context.increaseCountCart(); 
+  function addToCart(product) {
+    context.increaseCountCart();
     context.addProduct(product);
   }
 
@@ -25,13 +25,13 @@ const Card = () => {
               {item.category}
             </span>
             <img
-              className="w-full h-40 object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-lg"
               src={item.image}
               alt="Headphones"
             />
             <div
               className="absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1"
-              onClick={()=> addToCart(item)}
+              onClick={() => addToCart(item)}
             >
               +
             </div>
