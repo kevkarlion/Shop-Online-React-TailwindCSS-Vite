@@ -17,16 +17,16 @@ export const MiContextProvider = ({ children })=> {
     const [countCart, setCountCart] = useState(0);
 
     //item add to cart
-    const [item, setItem] = useState([]);
+    const [items, setItems] = useState([]);
 
     console.log(countCart);
-    console.log(item);
+    console.log(items);
 
 
     //Add product a product detail
     function addProduct(product){
-        const newArray = [...item, product];
-        setItem(newArray);
+        const newArray = [...items, product];
+        setItems(newArray);
     }
 
     function increaseCountCart (){
@@ -37,8 +37,8 @@ export const MiContextProvider = ({ children })=> {
         <MiContext.Provider value={{
             countCart,
             setCountCart,
-            item,
-            setItem,
+            items,
+            setItems,
             addProduct,
             increaseCountCart
         }}>
