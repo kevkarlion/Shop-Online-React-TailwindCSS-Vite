@@ -9,6 +9,9 @@ const Card = () => {
   const context = useContext(MiContext);
 
   function addToCart(product) {
+    if(context.door === false ){
+      context.setDoor(true);
+    }
     context.increaseCountCart();
     context.addProduct(product);
   }
@@ -18,7 +21,7 @@ const Card = () => {
       {items.map((item) => (
         <div
           key={item.id}
-          className="bg-white cursor-pointer w-36 h-auto rounded-lg"
+          className="bg-white cursor-pointer w-44 h-48 rounded-lg"
         >
           <figure className="relative  w-full h-4/5">
             <span className="absolute bottom-0 left-0 bg-white/60 rounded-lg  text-black text-xs mb-6 ml-2 px-3 py-0.5">

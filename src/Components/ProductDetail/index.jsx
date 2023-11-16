@@ -10,9 +10,13 @@ export const ProductDetail = () => {
   }
 
   return (
-    <div className="content-side-nav">
-      <nav className="side-nav">
+    <div className={context.door? "content-side-nav" : "display:none"}>
+      <div className="flex justify-between m-4">
         <span>My Order</span>
+        <span onClick={()=> context.openProductDetail()}>
+          x</span>
+      </div>
+      <nav className="side-nav">
         {context.items.map((item) => (
           <div key={item.id} className="flex mt-8 p-2 justify-center items-center w-full">
             <div className="flex items-center justify-center ml-2">
@@ -24,13 +28,13 @@ export const ProductDetail = () => {
                 />
               </figure>
               <p className="text-xs pl-2 mr-4 w-28">{item.title}</p>
+              </div>
+                <p className="text-sm  font-bold mr-2">${item.price}</p>
+                <span className="mr-4 cursor-pointer " onClick={() => itemDeleted(item)}>
+                  x
+                </span>
             </div>
-            <p className="text-sm  font-bold mr-2">${item.price}</p>
-            <span className="mr-4 cursor-pointer " onClick={() => itemDeleted(item)}>
-              x
-            </span>
-          </div>
-        ))}
+          ))}
       </nav>
     </div>
   );
