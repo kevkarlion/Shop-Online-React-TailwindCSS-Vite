@@ -7,13 +7,14 @@ export const ProductDetail = () => {
 
   const itemDeleted =(itemDeleted)=>{
     context.deletedProduct(itemDeleted);
+    context.decreaseCountCart();
   }
 
   return (
     <div className="content-side-nav">
       <div className="flex justify-between m-4">
         <span>My Order</span>
-        <span onClick={()=> context.toggleProductDetail()}>
+        <span className="cursor-pointer" onClick={()=> context.toggleProductDetail()}>
           x</span>
       </div>
       <nav className="side-nav">
@@ -36,6 +37,7 @@ export const ProductDetail = () => {
             </div>
           ))}
       </nav>
+      <button className="button">Checkout</button>
     </div>
   );
 };

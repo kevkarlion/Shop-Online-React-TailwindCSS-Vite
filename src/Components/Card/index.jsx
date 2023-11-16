@@ -21,7 +21,7 @@ const Card = () => {
       {items.map((item) => (
         <div
           key={item.id}
-          className="bg-white cursor-pointer w-44 h-48 rounded-lg"
+          className="bg-white w-44 h-48 rounded-lg"
         >
           <figure className="relative  w-full h-4/5">
             <span className="absolute bottom-0 left-0 bg-white/60 rounded-lg  text-black text-xs mb-6 ml-2 px-3 py-0.5">
@@ -33,7 +33,7 @@ const Card = () => {
               alt="Headphones"
             />
             <div
-              className="absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1"
+              className="absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1 cursor-pointer"
               onClick={() => addToCart(item)}
             >
               +
