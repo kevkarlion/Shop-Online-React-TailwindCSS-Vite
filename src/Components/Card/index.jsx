@@ -9,7 +9,7 @@ const Card = () => {
   const context = useContext(MiContext);
 
   function addToCart(product) {
-    if(context.door === false ){
+    if (context.door === false) {
       context.toggleProductDetail();
     }
     context.increaseCountCart();
@@ -19,10 +19,7 @@ const Card = () => {
   return (
     <div className="grid gap-4 grid-cols-4 h-auto w-auto mr-2">
       {items.map((item) => (
-        <div
-          key={item.id}
-          className="bg-white w-44 h-48 rounded-lg"
-        >
+        <div key={item.id} className="bg-white w-44 h-48 rounded-lg">
           <figure className="relative  w-full h-4/5">
             <span className="absolute bottom-0 left-0 bg-white/60 rounded-lg  text-black text-xs mb-6 ml-2 px-3 py-0.5">
               {item.category}
