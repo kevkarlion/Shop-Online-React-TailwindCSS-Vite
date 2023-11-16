@@ -10,7 +10,7 @@ const Card = () => {
 
   function addToCart(product) {
     if(context.door === false ){
-      context.setDoor(true);
+      context.toggleProductDetail();
     }
     context.increaseCountCart();
     context.addProduct(product);

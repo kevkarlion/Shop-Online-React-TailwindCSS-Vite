@@ -19,8 +19,7 @@ export const MiContextProvider = ({ children })=> {
     //item add to cart
     const [items, setItems] = useState([]);
 
-    //open detail
-    const [door, setDoor] = useState(false);
+    
 
 
     //Add product a product detail
@@ -34,8 +33,12 @@ export const MiContextProvider = ({ children })=> {
         setCountCart(countCart + 1);
     }
 
-    function openProductDetail(){
-        setDoor(door === false);
+
+    //open detailProduct
+    const [door, setDoor] = useState(false);
+    
+    function toggleProductDetail(){
+        setDoor(!door);
     }
 
     
@@ -57,7 +60,7 @@ export const MiContextProvider = ({ children })=> {
             addProduct,
             increaseCountCart,
             deletedProduct,
-            openProductDetail,
+            toggleProductDetail,
             door,
             setDoor
         }}>
