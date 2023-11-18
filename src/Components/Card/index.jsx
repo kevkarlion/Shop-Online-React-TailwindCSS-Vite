@@ -2,6 +2,7 @@
 import useApi from "../../API";
 import { useContext } from "react";
 import { MiContext } from "../Context";
+import './styles.css'
 
 const Card = () => {
   //Custom hook Api
@@ -17,11 +18,12 @@ const Card = () => {
   }
 
   return (
-    <div className="grid gap-4 grid-cols-4 h-auto w-auto mr-2">
+    <div className="container-grid">
       {items.map((item) => (
-        <div key={item.id} className="bg-white w-44 h-48 rounded-lg">
-          <figure className="relative  w-full h-4/5">
-            <span className="absolute bottom-0 left-0 bg-white/60 rounded-lg  text-black text-xs mb-6 ml-2 px-3 py-0.5">
+        <div key={item.id} className="bg-white h-auto rounded-lg">
+          <figure className="relative  w-full h-auto">
+            <span className="absolute bottom-0 left-0 bg-white/60 rounded-lg  
+            text-black text-xs mb-6 ml-2 px-3 py-0.5">
               {item.category}
             </span>
             <img
@@ -30,7 +32,8 @@ const Card = () => {
               alt="Headphones"
             />
             <div
-              className="absolute top-0 right-0 flex justify-center items-center bg-white w-6 h-6 rounded-full m-2 p-1 cursor-pointer"
+              className="absolute top-0 right-0 flex justify-center items-center 
+              bg-white w-6 h-6 rounded-full m-2 p-1 cursor-pointer"
               onClick={() => addToCart(item)}
             >
               +
