@@ -11,6 +11,10 @@ export const ProductDetail = () => {
     context.decreaseCountCart();
   };
 
+  const checkout = ()=> {
+    context.addOrderCheckout();
+  }
+
   return (
     <div className="content-side-nav">
       <div className="flex justify-between m-4">
@@ -26,9 +30,9 @@ export const ProductDetail = () => {
         {context.items.map((item) => (
           <div
             key={item.id}
-            className="flex mt-8 p-2 justify-center items-center w-full"
+            className="flex mt-8 mb-4 p-2 justify-center items-center w-full"
           >
-            <div className="flex items-center justify-center ml-2">
+            <div className="flex items-center justify-center ml-2 ">
               <figure className="w-16 h-18  mr-2">
                 <img
                   src={item.image}
@@ -48,8 +52,10 @@ export const ProductDetail = () => {
           </div>
         ))}
       </nav>
-      <button className="button p-4 m-2 mt-auto border rounded-lg bg-black text-slate-50">
-        <NavLink to='my-orders'>Checkout</NavLink> 
+      <button className="button p-4 m-2 mt-auto border rounded-lg
+       bg-black text-slate-50">
+        <NavLink to="my-orders" 
+        onClick={()=> checkout() }>Checkout</NavLink>
       </button>
     </div>
   );

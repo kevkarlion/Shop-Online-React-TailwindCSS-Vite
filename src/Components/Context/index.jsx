@@ -19,7 +19,28 @@ export const MiContextProvider = ({ children })=> {
     //item add to cart
     const [items, setItems] = useState([]);
 
-    
+
+
+    //array con datos de cada order que haga en el checkout
+    const [ordersCheckout, setOrdersCheckout] = useState([]);
+    const [checkoutFirst, setCheckoutFirst] = useState(true);
+
+
+    function addOrderCheckout (){
+        if (checkoutFirst) {
+            const newArray = [...items];
+            setOrdersCheckout([newArray]);
+            setCheckoutFirst(false);
+        }else {
+            const newArray = [...items];
+            setOrdersCheckout([ordersCheckout, newArray]);
+        }
+        setItems([]);
+        setCountCart(0);
+    }
+
+    console.log('soy orders', ordersCheckout);
+
 
 
     //Add product a product detail
@@ -69,7 +90,8 @@ export const MiContextProvider = ({ children })=> {
             deletedProduct,
             toggleProductDetail,
             door,
-            setDoor
+            setDoor,
+            addOrderCheckout
         }}>
             { children }
         </MiContext.Provider>
