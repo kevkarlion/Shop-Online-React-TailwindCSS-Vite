@@ -26,6 +26,8 @@ export const MiContextProvider = ({ children })=> {
     const [checkoutFirst, setCheckoutFirst] = useState(true);
 
 
+    //f que guarda los checkout listos para 
+    //el MyOrders
     function addOrderCheckout (){
         if (checkoutFirst) {
             const newArray = [...items];
@@ -39,9 +41,7 @@ export const MiContextProvider = ({ children })=> {
         setCountCart(0);
     }
 
-    console.log('soy orders', ordersCheckout);
-
-
+    console.log(ordersCheckout);
 
     //Add product a product detail
     function addProduct(product){
@@ -91,7 +91,9 @@ export const MiContextProvider = ({ children })=> {
             toggleProductDetail,
             door,
             setDoor,
-            addOrderCheckout
+            addOrderCheckout,
+            ordersCheckout,
+            checkoutFirst
         }}>
             { children }
         </MiContext.Provider>
