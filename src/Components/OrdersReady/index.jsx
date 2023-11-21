@@ -8,12 +8,12 @@ export function OrdersReady() {
 
 
     return (
-        <div className='w-32 h-6'>
+        <div className='flex justify-center  w-96 h-52'>
             {context.ordersCheckout.map((items, index)=>(
-                <div key={index}>
+                <div className=' border-solid ' key={index}>
                     {items.map((item, subindex)=>(
                         <div key={subindex}>
-                            <p>Titulo {item.title}</p>
+                            <p className=' text-xs '>Titulo {item.title}</p>
                         </div>
                     ))}
                 </div>
