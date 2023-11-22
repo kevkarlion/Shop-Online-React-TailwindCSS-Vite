@@ -29,14 +29,13 @@ export const MiContextProvider = ({ children })=> {
     //f que guarda los checkout listos para 
     //el MyOrders
     function addOrderCheckout (){
+        const newArray = [...items];
         if (checkoutFirst) {
-            const newArray = [...items];
             setOrdersCheckout([newArray]);
             setCheckoutFirst(false);
         }else {
-            const newArray = [...items];
-            const mArray = [ordersCheckout, [newArray]];
-            setOrdersCheckout(mArray);
+            const prueba = [...ordersCheckout, newArray];
+            setOrdersCheckout(prueba);
         }
         setItems([]);
         setCountCart(0);
