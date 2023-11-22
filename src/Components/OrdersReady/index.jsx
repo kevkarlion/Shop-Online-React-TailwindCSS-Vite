@@ -8,12 +8,13 @@ export function OrdersReady() {
 
 
     return (
-        <div className='flex justify-center  w-96 h-52'>
+        <div className='flex flex-col gap-1 justify-center mt-4  w-auto h-auto'>
             {context.ordersCheckout.map((items, index)=>(
-                <div className=' border-solid ' key={index}>
+                <div className=' border rounded-md border-black h-auto mt-4 p-4' key={index}>
                     {items.map((item, subindex)=>(
-                        <div key={subindex}>
-                            <p className=' text-xs '>Titulo {item.title}</p>
+                        <div className='flex justify-between' key={subindex}>
+                            <p className=' text-xs h-8 w-4/5'>{item.title}</p>
+                            <p className='text-xs'>{item.price}</p>
                         </div>
                     ))}
                 </div>
