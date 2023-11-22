@@ -12,8 +12,9 @@ export const ProductDetail = () => {
   };
 
   const checkout = ()=> {
-    if(context.items > 0 ){
-      return <NavLink to='/my-orders'></NavLink>
+    console.log('items: ',context.items);
+    if (context.items.length > 0 ) {
+      context.addOrderCheckout();
     }
   }
 
@@ -54,11 +55,10 @@ export const ProductDetail = () => {
           </div>
         ))}
       </nav>
-      <button
-        className="button p-4 m-2 mt-auto border rounded-lg
-        bg-black text-slate-50" 
-        onClick={()=> checkout() }
-        >Checkout
+      <button className="button p-4 m-2 mt-auto border rounded-lg
+       bg-black text-slate-50">
+        <NavLink to="my-orders" 
+        onClick={()=> checkout() }>Checkout</NavLink>
       </button>
     </div>
   );

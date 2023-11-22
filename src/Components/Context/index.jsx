@@ -35,13 +35,14 @@ export const MiContextProvider = ({ children })=> {
             setCheckoutFirst(false);
         }else {
             const newArray = [...items];
-            setOrdersCheckout([ordersCheckout, newArray]);
+            const mArray = [ordersCheckout, [newArray]];
+            setOrdersCheckout(mArray);
         }
         setItems([]);
         setCountCart(0);
     }
 
-    console.log(ordersCheckout);
+    console.log('orders checkout ',ordersCheckout);
 
     //Add product a product detail
     function addProduct(product){

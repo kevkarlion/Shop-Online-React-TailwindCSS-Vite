@@ -11,7 +11,7 @@ function MyOrders() {
       <>
         <Layout>
           MyOrders!
-          {!context.checkoutFirst &&  <OrdersReady />}
+          {context.ordersCheckout &&  <OrdersReady />}
         </Layout>
         
       </>
