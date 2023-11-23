@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { MiContext } from "../../Components/Context";
 import Layout from "../../Components/Layout";
-import { OrdersReady } from '../../Components/OrdersReady'; 
+import { CheckoutOrders } from '../../Components/CheckoutOrders'; 
 
 function MyOrders() {
 
@@ -11,7 +11,7 @@ function MyOrders() {
       <>
         <Layout>
           MyOrders!
-          {context.ordersCheckout &&  <OrdersReady />}
+          {context.ordersCheckout &&  <CheckoutOrders />}
         </Layout>
         
       </>

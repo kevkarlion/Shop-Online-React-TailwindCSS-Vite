@@ -12,7 +12,6 @@ export const ProductDetail = () => {
   };
 
   const checkout = ()=> {
-    console.log('items: ',context.items);
     if (context.items.length > 0 ) {
       context.addOrderCheckout();
     }

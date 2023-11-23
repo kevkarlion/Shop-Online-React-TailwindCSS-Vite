@@ -42,7 +42,6 @@ export const MiContextProvider = ({ children })=> {
         toggleProductDetail();
     }
 
-    console.log('orders checkout ',ordersCheckout);
 
     //Add product a product detail
     function addProduct(product){
