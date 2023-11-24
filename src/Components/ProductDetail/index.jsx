@@ -12,6 +12,7 @@ export const ProductDetail = () => {
   };
 
   const checkout = ()=> {
+    context.toggleProductDetail()
     if (context.items.length > 0 ) {
       context.addOrderCheckout();
     }
@@ -57,7 +58,7 @@ export const ProductDetail = () => {
       <button className="button p-4 m-2 mt-auto border rounded-lg
        bg-black text-slate-50">
         <NavLink to="my-orders/last" 
-        onClick={()=> checkout() }>Checkout</NavLink>
+          onClick={()=> checkout() }>Checkout</NavLink>
       </button>
     </div>
   );

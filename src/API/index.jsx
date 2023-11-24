@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 // import { Card } from '../Components/Card';
 
+// eslint-disable-next-line react-refresh/only-export-components
 const API = 'https://fakestoreapi.com/products';
 
 
