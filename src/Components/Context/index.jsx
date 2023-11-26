@@ -13,6 +13,12 @@ export const MiContext = createContext();
 // eslint-disable-next-line react/prop-types
 export const MiContextProvider = ({ children })=> {
 
+
+
+    //View single product ready to sale
+    const [singleItem, setSingleItem] = useState(false);
+    const [buys , setBuys] = useState(0);
+
     //Count add to cart
     const [countCart, setCountCart] = useState(0);
 
@@ -93,7 +99,11 @@ export const MiContextProvider = ({ children })=> {
             setDoor,
             addOrderCheckout,
             ordersCheckout,
-            checkoutFirst
+            checkoutFirst,
+            singleItem,
+            setSingleItem,
+            buys,
+            setBuys
         }}>
             { children }
         </MiContext.Provider>

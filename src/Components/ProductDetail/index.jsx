@@ -11,10 +11,14 @@ export const ProductDetail = () => {
     context.decreaseCountCart();
   };
 
+
+  //setSIngleItem false para que 
+  //no interfiera el componente ViewBuys
   const checkout = ()=> {
     context.toggleProductDetail()
     if (context.items.length > 0 ) {
       context.addOrderCheckout();
+      context.setSingleItem(false);
     }
   }
 
