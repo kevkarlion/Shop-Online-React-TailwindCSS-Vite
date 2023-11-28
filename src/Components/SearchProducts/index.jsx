@@ -1,15 +1,13 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { MiContext } from "../Context";
 
 export function SearchProducts() {
   const context = useContext(MiContext);
 
-  const [find, setFind] = useState('');
   const productFind = (e)=> {
-    setFind(e.target.value);
+    context.setFind(e.target.value);
   }
 
-  console.log(find);
 
 
   return (

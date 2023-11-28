@@ -16,10 +16,21 @@ const Card = () => {
     context.increaseCountCart();
     context.addProduct(product);
   }
+  
+  const valueFind = context.find;
+  console.log('Filtrar ',valueFind);
+
+ 
+
+  //Search - Metodos para buscar items en los productos
+  const productFiltered = items.filter( product=> product.title.toLowerCase().includes(valueFind));
+
+
+
 
   return (
     <div className="container-grid">
-      {items.map((item) => (
+      {productFiltered.map((item) => (
         <div key={item.id} className="bg-white h-auto rounded-lg">
           <figure className="relative  w-full h-auto">
             <span className="absolute bottom-0 left-0 bg-white/60 rounded-lg  

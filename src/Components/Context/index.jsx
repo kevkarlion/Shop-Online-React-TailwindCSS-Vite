@@ -73,6 +73,7 @@ export const MiContextProvider = ({ children })=> {
     }
 
 
+    const [find, setFind] = useState('');
 
     
 
@@ -103,7 +104,9 @@ export const MiContextProvider = ({ children })=> {
             singleItem,
             setSingleItem,
             buys,
-            setBuys
+            setBuys,
+            find,
+            setFind
         }}>
             { children }
         </MiContext.Provider>
