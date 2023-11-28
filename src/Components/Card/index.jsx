@@ -2,7 +2,7 @@
 import useApi from "../../API";
 import { useContext } from "react";
 import { MiContext } from "../Context";
-import './styles.css'
+import "./styles.css";
 
 const Card = () => {
   //Custom hook Api
@@ -16,25 +16,24 @@ const Card = () => {
     context.increaseCountCart();
     context.addProduct(product);
   }
-  
-  const valueFind = context.find;
-  console.log('Filtrar ',valueFind);
 
- 
+  //Search
+  const valueFind = context.find;
 
   //Search - Metodos para buscar items en los productos
-  const productFiltered = items.filter( product=> product.title.toLowerCase().includes(valueFind));
-
-
-
+  const productFiltered = items.filter((product) =>
+    product.title.toLowerCase().includes(valueFind)
+  );
 
   return (
     <div className="container-grid">
       {productFiltered.map((item) => (
         <div key={item.id} className="bg-white h-auto rounded-lg">
           <figure className="relative  w-full h-auto">
-            <span className="absolute bottom-0 left-0 bg-white/60 rounded-lg  
-            text-black text-xs mb-6 ml-2 px-3 py-0.5">
+            <span
+              className="absolute bottom-0 left-0 bg-white/60 rounded-lg  
+            text-black text-xs mb-6 ml-2 px-3 py-0.5"
+            >
               {item.category}
             </span>
             <img

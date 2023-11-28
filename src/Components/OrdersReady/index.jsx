@@ -19,7 +19,7 @@ export function OrdersReady() {
     context.setBuys(index);
   }
   
-  console.log('viewBuys',context.singleItem);
+  
 
   return (
     <div className="flex flex-col gap-1 justify-center mt-4  w-auto h-auto">

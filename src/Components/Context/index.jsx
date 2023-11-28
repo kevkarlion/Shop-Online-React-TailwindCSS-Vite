@@ -76,6 +76,8 @@ export const MiContextProvider = ({ children })=> {
     const [find, setFind] = useState('');
 
     
+    const [clothes, setClothes ] = useState(false);
+
 
     //borra un elemento de la orden
     function deletedProduct(itemDeleted){
@@ -106,7 +108,9 @@ export const MiContextProvider = ({ children })=> {
             buys,
             setBuys,
             find,
-            setFind
+            setFind,
+            clothes,
+            setClothes
         }}>
             { children }
         </MiContext.Provider>

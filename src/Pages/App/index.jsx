@@ -2,6 +2,7 @@
 /* eslint-disable no-undef */
 import { useRoutes, BrowserRouter } from 'react-router-dom';
 import Home from '../Home';
+import { SearchView } from '../../Components/SearchView';
 import MyAccount from '../MyAccount';
 import MyOrders from '../MyOrders';
 import MyOrderLast from '../MyOrderLast';
@@ -18,7 +19,7 @@ import './App.css';
 const AppRoutes = () => {
   let routes = useRoutes ([
     { path: '/', element: <Home />},
-    // { path: '/', element: <ProductDetail />},
+    { path: '/clothes', element: <SearchView />},
 
     { path: '/my-account', element: <MyAccount />},
     { path: '/my-orders', element: <MyOrders />},

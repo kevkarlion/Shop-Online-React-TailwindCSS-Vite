@@ -3,7 +3,9 @@ import Card from "../../Components/Card";
 import { ProductDetail } from '../../Components/ProductDetail';
 import { MiContext } from '../../Components/Context';
 import { SearchProducts } from '../../Components/SearchProducts';
+
 import { useContext } from 'react';
+
 
 function Home() {
 
