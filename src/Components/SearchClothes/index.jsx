@@ -25,15 +25,18 @@ export function SearchClothes() {
   );
   console.log("clothes", clothesFiltered);
 
-  //   //Search - Metodos para buscar items en los productos
-  //   const productFiltered = items.filter((product) =>
-  //     product.title.toLowerCase().includes(valueFind)
-  //   );
+    //Search
+    const valueFind = context.find;
+
+    //Search - Metodos para buscar items en los productos
+    const productFiltered = clothesFiltered.filter((product) =>
+      product.title.toLowerCase().includes(valueFind)
+    );
 
   //Clothes
   return (
     <div className="container-grid">
-      {clothesFiltered.map((item) => (
+      {productFiltered.map((item) => (
         <div key={item.id} className="bg-white h-auto rounded-lg">
           <figure className="relative  w-full h-auto">
             <span
