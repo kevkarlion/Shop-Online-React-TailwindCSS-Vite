@@ -2,7 +2,7 @@
 /* eslint-disable no-undef */
 import { useRoutes, BrowserRouter } from 'react-router-dom';
 import Home from '../Home';
-import { SearchView } from '../../Components/SearchView';
+
 import MyAccount from '../MyAccount';
 import MyOrders from '../MyOrders';
 import MyOrderLast from '../MyOrderLast';

@@ -30,7 +30,7 @@ export function Electronics() {
 
     //Search - Metodos para buscar items en los productos
     const productFiltered = electronicsFiltered.filter((product) =>
-      product.title.toLowerCase().includes(valueFind)
+      product.title.toLowerCase().includes(valueFind.toLowerCase())
     );
 
   //Clothes

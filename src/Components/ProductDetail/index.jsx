@@ -61,7 +61,7 @@ export const ProductDetail = () => {
       </nav>
       <button className="button p-4 m-2 mt-auto border rounded-lg
        bg-black text-slate-50">
-        <NavLink to="my-orders/last" 
+        <NavLink to="/my-orders/last" 
           onClick={()=> checkout() }>Checkout</NavLink>
       </button>
     </div>

@@ -30,7 +30,7 @@ export function SearchClothes() {
 
     //Search - Metodos para buscar items en los productos
     const productFiltered = clothesFiltered.filter((product) =>
-      product.title.toLowerCase().includes(valueFind)
+      product.title.toLowerCase().includes(valueFind.toLowerCase())
     );
 
   //Clothes

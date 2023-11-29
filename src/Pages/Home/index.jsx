@@ -32,8 +32,8 @@ function Home() {
         <p className='text-xs'>Find your favorite exclusive product</p>
         <SearchProducts />
         
-        {path === '/clothes' && <SearchClothes />}
         {path === '/' && <Card />}
+        {path === '/clothes' && <SearchClothes />}
         {path === '/jewelery' && <Jewelery />}
         {path === '/electronics' && <Electronics />}
         {context.door && <ProductDetail/>}
