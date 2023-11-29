@@ -6,6 +6,8 @@ import { SearchProducts } from '../../Components/SearchProducts';
 import { SearchClothes } from '../../Components/SearchClothes';
 
 import { useContext } from 'react';
+import { Jewelery } from '../../Components/SearchJewelery';
+import { Electronics } from '../../Components/SearchElectronics';
 
 
 function Home() {
@@ -32,7 +34,8 @@ function Home() {
         
         {path === '/clothes' && <SearchClothes />}
         {path === '/' && <Card />}
-        
+        {path === '/jewelery' && <Jewelery />}
+        {path === '/electronics' && <Electronics />}
         {context.door && <ProductDetail/>}
       </Layout>
       
