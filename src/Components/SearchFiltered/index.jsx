@@ -1,11 +1,14 @@
 import { MiContext } from "../Context";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import useApi from "../../API";
 import "./styles.css";
 
-export function SearchClothes() {
+export function SearchFiltered() {
   //Custom hook Api
   const items = useApi();
+
+
+  const [filtered, setFiltered] = useState('');
 
   const context = useContext(MiContext);
 
@@ -20,18 +23,31 @@ export function SearchClothes() {
   //Search
   //   const valueFind = context.find;
 
-  const clothesFiltered = items.filter(
-    (clothes) => clothes.category === `men's clothing`
+  useEffect(() => {
+    const pathSelect = window.location.pathname.slice(1);
+  
+    if (pathSelect === `clothes`){
+      setFiltered(`men's clothing`); 
+    } else {
+      setFiltered(pathSelect); 
+    }
+  }, [window.location.pathname]);
+
+
+  
+  const itemsFiltered = items.filter(
+    (product) => product.category === filtered
   );
-  console.log("clothes", clothesFiltered);
 
-    //Search
-    const valueFind = context.find;
+  
 
-    //Search - Metodos para buscar items en los productos
-    const productFiltered = clothesFiltered.filter((product) =>
-      product.title.toLowerCase().includes(valueFind.toLowerCase())
-    );
+  //Search
+  const valueFind = context.find;
+
+  //Search - Metodos para buscar items en los productos
+  const productFiltered = itemsFiltered.filter((product) =>
+    product.title.toLowerCase().includes(valueFind.toLowerCase())
+  );
 
   //Clothes
   return (
