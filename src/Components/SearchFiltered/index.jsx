@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { MiContext } from "../Context";
 import { useContext, useState, useEffect } from "react";
 import useApi from "../../API";
@@ -12,6 +13,7 @@ export function SearchFiltered() {
 
   const context = useContext(MiContext);
 
+  //Agrega un item al carrito y abre el detalle del pedido
   function addToCart(product) {
     if (context.door === false) {
       context.toggleProductDetail();
@@ -20,23 +22,26 @@ export function SearchFiltered() {
     context.addProduct(product);
   }
 
-  //Search
-  //   const valueFind = context.find;
 
+  //Effect para filtrar por categoria
   useEffect(() => {
     const pathSelect = window.location.pathname.slice(1);
-  
     if (pathSelect === `clothes`){
       setFiltered(`men's clothing`); 
-    } else {
-      setFiltered(pathSelect); 
+    }
+    if (pathSelect === 'jewelery' || pathSelect === 'electronics'){
+      setFiltered(pathSelect);
+    }
+    if (pathSelect === '' ){
+      setFiltered(true);
     }
   }, [window.location.pathname]);
 
 
   
+  //Search - Metodo para buscar por categoria segun el path
   const itemsFiltered = items.filter(
-    (product) => product.category === filtered
+    (product) => product.category === filtered || !!product.category === filtered
   );
 
   
@@ -44,12 +49,12 @@ export function SearchFiltered() {
   //Search
   const valueFind = context.find;
 
-  //Search - Metodos para buscar items en los productos
+  //Search personalizada del input
   const productFiltered = itemsFiltered.filter((product) =>
     product.title.toLowerCase().includes(valueFind.toLowerCase())
   );
 
-  //Clothes
+  
   return (
     <div className="container-grid">
       {productFiltered.map((item) => (
