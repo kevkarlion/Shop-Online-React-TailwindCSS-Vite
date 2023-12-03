@@ -1,7 +1,9 @@
 import { useContext } from "react";
 import { MiContext } from "../Context";
-import "./styles.css";
 import { NavLink } from "react-router-dom";
+import { TfiMoney } from "react-icons/tfi";
+
+import "./styles.css";
 
 export const ProductDetail = () => {
   const context = useContext(MiContext);
@@ -30,31 +32,36 @@ export const ProductDetail = () => {
           className="cursor-pointer"
           onClick={() => context.toggleProductDetail()}
         >
-          x
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+
         </span>
       </div>
       <nav className="side-nav">
         {context.items.map((item) => (
           <div
             key={item.id}
-            className="flex mt-8 mb-4 p-2 justify-center items-center w-full"
+            className="flex mt-8 mb-4 p-2 justify-start items-center w-full"
           >
-            <div className="flex items-center justify-center ml-2 ">
-              <figure className="w-16 h-18  mr-2">
+            <div className="flex items-center justify-center w-[225px]">
+              <figure className="w-16 h-18">
                 <img
                   src={item.image}
                   alt=""
                   className="object-cover w-full h-full"
                 />
               </figure>
-              <p className="text-xs pl-2 mr-4 w-28">{item.title}</p>
+              <p className="text-xs pl-2 mr-2 w-28">{item.title}</p>
             </div>
-            <p className="text-sm  font-bold mr-2">${item.price}</p>
+            <p className="text-sm  font-bold flex"><span><TfiMoney /></span>{item.price}</p>
             <span
-              className="mr-4 cursor-pointer "
+              className="pl-2 cursor-pointer "
               onClick={() => itemDeleted(item)}
             >
-              x
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"         stroke="currentColor" className="w-4 h-4 border-solid border-black border-[1px] rounded-full">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </span>
           </div>
         ))}

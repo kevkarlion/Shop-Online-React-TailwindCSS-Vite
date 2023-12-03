@@ -1,13 +1,10 @@
-import { useFiltered } from '../useFiltered';
+import { useFiltered } from "../useFiltered";
 import "./styles.css";
 
 export function SearchFiltered() {
-
-
   //custom hook useFilteder
-  const {addToCart, productFiltered } = useFiltered();
+  const { addToCart, productFiltered } = useFiltered();
 
-  
   return (
     <div className="container-grid">
       {productFiltered.map((item) => (
@@ -26,10 +23,23 @@ export function SearchFiltered() {
             />
             <div
               className="absolute top-0 right-0 flex justify-center items-center 
-                        bg-white w-6 h-6 rounded-full m-2 p-1 cursor-pointer"
+                        bg-white w-6  h-6 rounded-full border-[1px] border-black  m-2 p-1 cursor-pointer"
               onClick={() => addToCart(item)}
             >
-              +
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 4.5v15m7.5-7.5h-15"
+                />
+              </svg>
             </div>
           </figure>
           <p className="flex justify-between h-auto mb-1 ">
