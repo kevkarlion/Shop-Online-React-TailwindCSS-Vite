@@ -5,7 +5,7 @@ import { CheckoutOrders } from "../../Components/CheckoutOrders";
 import { ViewBuys } from "../../Components/ViewBuys";
 
 // import { OrdersReady } from "../../Components/OrdersReady";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
@@ -22,13 +22,13 @@ export default function MyOrderLast() {
     <>
       <Layout>
 
-        <NavLink to='/my-orders'>
+        <Link to='/my-orders'>
           <p
             className="cursor-pointer"
           >
             go to MyOrders!
           </p>
-        </NavLink>
+        </Link>
       
         
         <div>

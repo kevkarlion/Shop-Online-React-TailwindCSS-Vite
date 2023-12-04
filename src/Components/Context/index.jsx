@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { useState } from "react";
-import useApi from '../../API';
+
 
 
 //Esta variable es la que se importa y se usa en los 
@@ -14,7 +14,6 @@ export const MiContext = createContext();
 // eslint-disable-next-line react/prop-types
 export const MiContextProvider = ({ children })=> {
 
-    const itemsApi = useApi();
 
     //View single product ready to sale
     const [singleItem, setSingleItem] = useState(false);
@@ -89,24 +88,7 @@ export const MiContextProvider = ({ children })=> {
     }
 
 
-    const [pathSelected, setPathSelected] = useState('');
-    const [productFiltered, setProductFiltered] = useState([])
-
-
-    function filtered (){
-        
-        if(pathSelected === `men's clothing`){
-            setPathSelected('clothes');
-        }
-        console.log(pathSelected);
-        const itemsFiltered = itemsApi.filter(
-            (product) => product.category === pathSelected);
-        //Search - Metodos para buscar items en los productos
-        setProductFiltered(itemsFiltered.filter((product) =>
-            product.title.toLowerCase().includes(find.toLowerCase())
-        ))
-        
-    }
+  
 
 
 
@@ -134,11 +116,7 @@ export const MiContextProvider = ({ children })=> {
             find,
             setFind,
             clothes,
-            setClothes,
-            productFiltered,
-            setPathSelected,
-            setProductFiltered,
-            filtered
+            setClothes
         }}>
             { children }
         </MiContext.Provider>

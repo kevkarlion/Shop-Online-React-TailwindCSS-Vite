@@ -11,6 +11,13 @@ export function CheckoutOrders() {
 
   const lastItem = context.ordersCheckout.length - 1;
 
+  const totalCheckout = ()=> {
+    let total = 0;
+    context.ordersCheckout[lastItem].forEach((item) => {
+      total += item.price;
+    });
+    return total
+  }
   
 
   return (
@@ -29,7 +36,7 @@ export function CheckoutOrders() {
         </div>
       ))}
       <div>
-
+        <p className="text-base font-semibold">Total: ${totalCheckout()}</p>
       </div>
     </div>
   );

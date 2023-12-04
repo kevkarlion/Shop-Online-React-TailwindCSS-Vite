@@ -5,6 +5,9 @@ import { TfiMoney } from "react-icons/tfi";
 
 import "./styles.css";
 
+
+//Menu desplegable para hacer el checkout
+
 export const ProductDetail = () => {
   const context = useContext(MiContext);
 
@@ -42,9 +45,9 @@ export const ProductDetail = () => {
         {context.items.map((item) => (
           <div
             key={item.id}
-            className="flex mt-8 mb-4 p-2 justify-start items-center w-full"
+            className="flex mt-8 mb-4 p-4 justify-start items-center w-full"
           >
-            <div className="flex items-center justify-center w-[225px]">
+            <div className="flex items-center justify-center w-[225px] pr-2">
               <figure className="w-16 h-18">
                 <img
                   src={item.image}

@@ -14,6 +14,11 @@ export function OrdersReady() {
   
   const context = useContext(MiContext);
   
+
+
+
+  //Recibe el index de la compra, 
+  //veo el array con todos los elementos de dicha compra
   const viewBuys = (index)=> {
     context.setSingleItem(true);
     context.setBuys(index);
