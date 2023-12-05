@@ -18,7 +18,7 @@ export function ViewBuys() {
 
   
   return (
-    <div className="flex flex-col gap-1 justify-center mt-4  w-[460px] h-auto">
+    <div className="flex flex-col gap-1 justify-center mt-4  w-[460px] h-auto items-center">
       {context.ordersCheckout[context.buys].map((items, index) => (
             <div
               className="grid grid-cols-3  w-auto h-auto items-center  mb-4 mt-4 "

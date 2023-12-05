@@ -3,7 +3,7 @@ import { MiContext } from "../Context";
 import { TfiMoney } from "react-icons/tfi";
 
 
-//Aca va el detalle de 1 checkout
+//Aca va el detalle del ultimo pedido
 //esto es MyOrders/last
 
 export function CheckoutOrders() {
@@ -21,7 +21,7 @@ export function CheckoutOrders() {
   
 
   return (
-    <div className="flex flex-col gap-1 justify-center mt-4  w-[460px] h-auto">
+    <div className="flex flex-col gap-1 justify-center mt-4  w-[460px] h-auto items-center">
       {context.ordersCheckout[lastItem].map((items, index) => (
         <div
           className="grid grid-cols-3 w-auto h-auto items-center mb-4 mt-4 "
