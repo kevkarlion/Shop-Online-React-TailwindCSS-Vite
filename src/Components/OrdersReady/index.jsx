@@ -30,23 +30,34 @@ export function OrdersReady() {
   const date = new Date();
 
   return (
-    <div className="flex flex-col gap-1 justify-center mt-4  w-[530px] h-32">
+    <div className="flex flex-col items-center gap-1 justify-center mt-4  w-[360px] h-auto">
       {context.ordersCheckout.map((items, index) => (
         <div
-          className=" border rounded-md border-black h-full mt-4 p-4"
+          className="flex items-center justify-between w-full  border rounded-lg border-black h-full p-4 m-4"
           key={index}
         >
           <Link
-            className="flex justify-between"
+            className="flex justify-between grow p-4 items-center"
             onClick={() => viewBuys(index)}
             to={`/my-orders/${index}`}
           >
-            <div className="flex flex-col">
-              <p>{date.toLocaleDateString()}</p>
-              <p> {items.length} Articulos </p>
+            <div className="flex flex-col items-center border-solid border-black bg-black border-[1px] w-[120px] rounded-t-lg rounded-b-lg">
+              <p className="flex justify-center w-full text-white ">
+                {date.toLocaleDateString()}
+              </p>
+              
+              {items.length === 1 ? (
+                <p className="flex font-bold text-lg text-white w-full justify-center">
+                  {items.length} Artículo
+                </p>
+              ) : (
+                <p className="flex font-bold text-lg text-white w-full justify-center">
+                  {items.length} Artículos
+                </p>
+              )}
             </div>
-            <p className="flex items-center	 ">
-              <TfiMoney /> {price(items)}
+            <p className="flex items-center justify-center	font-bold border-solid border-black bg-black border-[1px] rounded-lg text-white w-auto p-2 h-auto ">
+              Total: <TfiMoney /> {price(items)}
             </p>
           </Link>
         </div>
