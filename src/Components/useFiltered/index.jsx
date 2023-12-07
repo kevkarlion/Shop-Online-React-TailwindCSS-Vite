@@ -16,7 +16,7 @@ export function useFiltered(){
     //Agrega un item al carrito y abre el detalle del pedido
     function addToCart (product) {
         if (context.door === false) {
-        context.toggleProductDetail();
+            context.toggleProductDetail();
         }
         context.increaseCountCart();
         context.addProduct(product);
