@@ -10,17 +10,13 @@ export function SearchFiltered() {
   return (
     <div className="container-grid">
       {productFiltered.map((item) => (
-        <div key={item.id} className="flex flex-col bg-white h-full rounded-lg border-solid border-[1px]  w-[130px] duration-300 hover:shadow-2xl group transform transition-transform hover:scale-105 ease-in-out overflow-hidden">
-          <figure className="relative  w-full h-full border-b p-2	transform group-hover:scale-105 transition-transform">
-            <span
-              className="transform transition-transform group-hover:scale-105 absolute bottom-0 left-0 bg-white/60 rounded-lg text-black text-xs mb-6 ml-2 px-3 py-0.5"
-            >
-              {item.category}
-            </span>
+        <div key={item.id} className="flex flex-col bg-white h-full rounded-lg w-[160px]  duration-300 hover:shadow-2xl group transform transition-transform hover:scale-105 ease-in-out overflow-hidden">
+          <figure className="relative w-full h-full  p-4	transform group-hover:scale-105 transition-transform">
+         
             <img
               className="transform group-hover:scale-105 transition-transform w-full h-full object-contain rounded-lg pb-2"
               src={item.image}
-              alt="Headphones"
+              alt="Product Image"
             />
             <div
               className="transform group-hover:scale-105 transition-transform absolute top-0 right-0 flex justify-center items-center 
@@ -43,6 +39,11 @@ export function SearchFiltered() {
               </svg>
             </div>
           </figure>
+          <span
+              className="flex justify-center items-center w-auto h-auto  transform group-hover:scale-105 transition-transform bg-white text-sm font-light	text-black	border-y-[1px] border-black py-[2px]	"
+            >
+              {item.category}
+            </span>
           <p className=" flex flex-col justify-center items-center h-full  mt-4 rounded-b-lg">
             <span className=" flex items-center  justify-center text-xs font-light mb-4 p-2">{item.title}</span>
             <span className="flex justify-center items-center text-sm font-medium mt-auto w-full bg-black text-white rounded-b-lg transform group-hover:scale-105 transition-transform"> <TfiMoney /> {item.price}</span>
