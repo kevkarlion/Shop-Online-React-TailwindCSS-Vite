@@ -10,7 +10,7 @@ export function ViewBuys() {
     context.ordersCheckout[context.buys].forEach((item) => {
       total += item.price;
     });
-    return total;
+    return total.toFixed(2);
   };
 
   return (

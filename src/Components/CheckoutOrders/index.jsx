@@ -15,7 +15,7 @@ export function CheckoutOrders() {
     context.ordersCheckout[lastItem].forEach((item) => {
       total += item.price;
     });
-    return total;
+    return total.toFixed(2);
   };
 
   return (
