@@ -7,7 +7,7 @@ function MyOrders() {
     return (
       <>
         <Layout>
-          <p className="flex justify-center mb-4 font-bold w-full">My Orders!</p>
+          <p className="flex justify-center mb-4 font-bold w-full">My Orders! </p>
            
           <OrdersReady />
         </Layout>

@@ -1,5 +1,6 @@
 .content-side-nav {
     position: fixed;
+    width: auto;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -15,6 +16,7 @@
 .side-nav{
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 310px;
 }
 

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { MiContext } from "../Context";
 import { NavLink } from "react-router-dom";
 import { TfiMoney } from "react-icons/tfi";
+import { IoLogoUsd } from "react-icons/io";
 
 import "./styles.css";
 
@@ -25,10 +26,19 @@ export const ProductDetail = () => {
     }
   };
 
+  const totalCheckout = () => {
+    let total = 0;
+    context.items.forEach((item) => {
+      total += item.price;
+    });
+    return total.toFixed(2);
+  };
+
+
   return (
     <div className="content-side-nav">
       <div className="flex justify-between m-4">
-        <span>My Order</span>
+        <span className="font-bold">My Order</span>
         <span
           className="cursor-pointer"
           onClick={() => context.toggleProductDetail()}
@@ -93,9 +103,15 @@ export const ProductDetail = () => {
           </div>
         ))}
       </nav>
+      {context.items.length > 0 && (
+        <p className="flex justify-center text-base items-center font-semibold  border-solid border-black bg-black border-[1px] w-[120px] h-[35px] rounded-lg text-white mt-auto mb-4 ml-auto mr-auto">
+          Total <IoLogoUsd style={{marginLeft: "8px"}}/>{totalCheckout()}
+        </p>
+        )
+      }
       <button
-        className="button p-4 m-2 mt-auto border rounded-lg
-       bg-black text-slate-50"
+        className="button p-4 m-2  border rounded-lg
+       bg-black text-slate-50 font-bold"
       >
         <NavLink to="/my-orders/last" onClick={() => checkout()}>
           Checkout

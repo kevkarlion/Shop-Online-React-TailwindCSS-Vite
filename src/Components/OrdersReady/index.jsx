@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { MiContext } from "../Context";
 import { Link } from "react-router-dom";
-import { TfiMoney } from "react-icons/tfi";
+import { IoLogoUsd } from "react-icons/io";
+
 
 //Aca va a ir el detalle de las ordenes
 //listas
@@ -33,7 +34,7 @@ export function OrdersReady() {
     <div className="flex flex-col items-center gap-1 justify-center mt-4  w-[360px] h-auto">
       {context.ordersCheckout.map((items, index) => (
         <div
-          className="flex items-center justify-between w-full  border rounded-lg border-black h-full p-4 m-4"
+          className="flex items-center justify-between w-full shadow-md transition-shadow duration-300 hover:shadow-xl border rounded-lg  h-full p-4 m-4 bg-white"
           key={index}
         >
           <Link
@@ -57,7 +58,7 @@ export function OrdersReady() {
               )}
             </div>
             <p className="flex items-center justify-center	font-bold border-solid border-black bg-black border-[1px] rounded-lg text-white w-auto p-2 h-auto ">
-              Total: <TfiMoney /> {price(items)}
+              Total  <IoLogoUsd style={{marginLeft: "8px"}}/> {price(items)}
             </p>
           </Link>
         </div>

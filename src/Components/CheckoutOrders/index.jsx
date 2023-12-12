@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { MiContext } from "../Context";
 import { TfiMoney } from "react-icons/tfi";
+import { IoLogoUsd } from "react-icons/io";
+
 
 //Aca va el detalle del ultimo pedido
 //esto es MyOrders/last
@@ -37,7 +39,7 @@ export function CheckoutOrders() {
       ))}
       <div>
         <p className="flex justify-center text-base items-center font-semibold  border-solid border-black bg-black border-[1px] w-[120px] h-[35px] rounded-lg text-white mt-4 mb-4">
-          Total: ${totalCheckout()}
+          Total <IoLogoUsd style={{marginLeft: "8px"}}/>{totalCheckout()}
         </p>
       </div>
     </div>

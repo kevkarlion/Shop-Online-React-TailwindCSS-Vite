@@ -1,4 +1,6 @@
 import { useContext } from "react";
+import { IoLogoUsd } from "react-icons/io";
+
 import { MiContext } from "../Context";
 
 //Detalles unitarios de pedidos ya realizados
@@ -30,7 +32,7 @@ export function ViewBuys() {
       ))}
       <div>
         <p className="flex justify-center text-base items-center font-semibold  border-solid border-black bg-black border-[1px] w-[120px] h-[35px] rounded-lg text-white mt-4 mb-4">
-          Total: $ {totalCheckout()}
+          Total <IoLogoUsd style={{marginLeft: "8px"}}/> {totalCheckout()}
         </p>
       </div>
     </div>
