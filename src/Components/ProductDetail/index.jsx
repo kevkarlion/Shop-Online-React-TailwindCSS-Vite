@@ -36,8 +36,8 @@ export const ProductDetail = () => {
 
   return (
     <div className="content-side-nav">
-      <div className="flex justify-between m-2 p-2 border-b-[1px]">
-        <span className="font-bold">My Order</span>
+      <div className="flex justify-between  rounded-xl 	p-2 w-[250px] fixed bg-white">
+        <span className="font-bold ">My Order</span>
         <span
           className="cursor-pointer"
           onClick={() => context.toggleProductDetail()}
@@ -65,7 +65,7 @@ export const ProductDetail = () => {
             key={item.id}
             className="flex mt-6 mb-2 p-2 justify-center items-center w-full "
           >
-            <div className="flex items-center justify-center w-[150px] pr-2 grow">
+            <div className="flex items-center justify-center w-[150px] pr-2">
               <figure className="w-16 h-18 ">
                 <img
                   src={item.image}
@@ -106,13 +106,13 @@ export const ProductDetail = () => {
       </nav>
       {/* Si hay elementos en el carrito, muestro el total */}
       {context.items.length > 0 && (
-        <p className="flex justify-center text-base items-center font-semibold  border-solid border-black bg-black border-[1px] w-[120px] h-[35px] rounded-lg text-white mt-auto  ml-auto mr-auto">
+        <p className="flex justify-center text-base items-center font-semibold  border-solid border-black bg-black border-[1px] w-[120px] h-[35px] rounded-lg text-white mt-auto mb-2 ml-auto mr-auto">
           Total <IoLogoUsd style={{ marginLeft: "8px" }} />
           {totalCheckout()}
         </p>
       )}
       <button
-        className="button p-4 m-2  border rounded-lg
+        className="button p-4   border rounded-lg
        bg-black text-slate-50 font-bold"
       >
         <NavLink to="/my-orders/last" onClick={() => checkout()}>

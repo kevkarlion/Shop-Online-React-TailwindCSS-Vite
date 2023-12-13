@@ -1,23 +1,27 @@
 .content-side-nav {
     position: fixed;
-    width: auto;
+    width: 268px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     height: 100vh;
     border: 1px solid black;
-    border-radius: 6px;
+    border-radius: 12px;
     right: 0;
+    top: 64px;
     z-index: 3;
     background-color: white;
     overflow: auto;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
 }
 
 .side-nav{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     width: 250px;
+    margin-top: 40px;
+    border: none;
 }
 
