@@ -24,7 +24,6 @@ export function OrdersReady() {
     items.forEach((e) => {
       total = total + e.price;
     });
-    console.log(total);
     return total;
   };
 
