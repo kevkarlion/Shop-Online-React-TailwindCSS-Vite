@@ -42,7 +42,7 @@ const App = () => {
     //Envuelvo en BrowserRouter 
     //la funcion contenedora de rutas
     <MiContextProvider>
-      <BrowserRouter>
+      <BrowserRouter basename='/Shop-Online-React-TailwindCSS-Vite'>
         <AppRoutes />
         <Navbar/>
       </BrowserRouter>
