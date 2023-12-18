@@ -1,53 +1,39 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-import { useRoutes, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Home from '../Home';
-
 import MyAccount from '../MyAccount';
 import MyOrders from '../MyOrders';
 import MyOrderLast from '../MyOrderLast';
-import NotFound from '../NotFound';
-import SingIn from '../SingIn';
+import SignIn from '../SignIn';
 import Navbar from '../../Components/Navbar';
-// import { ProductDetail } from '../../Components/ProductDetail';
-import { MiContextProvider } from '../../Components/Context'
+import { MiContextProvider } from '../../Components/Context';
 import './App.css';
 
-
-
-//Usamos userRoutes
+// Usamos Routes
 const AppRoutes = () => {
-  let routes = useRoutes ([
-    { path: '/', element: <Home />},
-    { path: '/clothes', element: <Home />},
-    { path: '/jewelery', element: <Home />},
-    { path: '/electronics', element: <Home />},
-
-    { path: '/my-account', element: <MyAccount />},
-    { path: '/my-orders', element: <MyOrders />},
-    
-    { path: '/my-orders/last', element: <MyOrderLast />},
-    { path: '/my-orders/:id', element: <MyOrderLast />},
-    { path: '/*', element: <NotFound />},
-    { path: '/sing-in', element: <SingIn />},
-
-  ])
-  return routes
-}
-
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/clothes" element={<Home />} />
+      <Route path="/jewelery" element={<Home />} />
+      <Route path="/electronics" element={<Home />} />
+      <Route path="/my-account" element={<MyAccount />} />
+      <Route path="/my-orders" element={<MyOrders />} />
+      <Route path="/my-orders/last" element={<MyOrderLast />} />
+      <Route path="/my-orders/:id" element={<MyOrderLast />} />
+      <Route path="/sign-in" element={<SignIn />} />
+    </Routes>
+  );
+};
 
 const App = () => {   
   return (
-
-    //Envuelvo en BrowserRouter 
-    //la funcion contenedora de rutas
     <MiContextProvider>
-      <BrowserRouter>
+      <BrowserRouter basename='/shop-online-react-tailwindcss-vite'>
         <AppRoutes />
-        <Navbar/>
+        <Navbar />
       </BrowserRouter>
     </MiContextProvider>
-  ) 
-}
+  );
+};
 
-export default App
+export default App;
