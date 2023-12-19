@@ -3,9 +3,7 @@ import Layout from "../../Components/Layout";
 import { ProductDetail } from "../../Components/ProductDetail";
 import { MiContext } from "../../Components/Context";
 import { SearchProducts } from "../../Components/SearchProducts";
-
 import { useContext } from "react";
-
 import { SearchFiltered } from "../../Components/SearchFiltered";
 
 function Home() {
@@ -16,7 +14,10 @@ function Home() {
       <Layout>
         <p className=" text-lg font-bold">Exclusive Products</p>
         <p className="text-xs">Find your favorite exclusive product</p>
+        {/* busqueda segun input */}
         <SearchProducts />
+
+        {/* filtrado segun el path */}
         <SearchFiltered />
         {context.door && <ProductDetail />}
       </Layout>

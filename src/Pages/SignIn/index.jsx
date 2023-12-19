@@ -1,6 +1,6 @@
 import Layout from "../../Components/Layout";
 
-function SingIn() {
+function SignIn() {
 
 
     return (
@@ -13,5 +13,5 @@ function SingIn() {
     )
   }
   
-  export default SingIn
+  export default SignIn
   

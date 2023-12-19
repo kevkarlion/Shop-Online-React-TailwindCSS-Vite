@@ -3,22 +3,23 @@ import { useContext } from "react";
 import { MiContext } from "../../Components/Context";
 import { TfiMoney } from "react-icons/tfi";
 
+
 import "./styles.css";
 
 export function SearchFiltered() {
+
+
   const context = useContext(MiContext);
   //custom hook useFilteder
   const { addToCart, productFiltered } = useFiltered();
 
+  //Icon check or plus if add item
   const renderIcon = (item) => {
     const productExist = context.items.includes(item);
     if (productExist) {
       return (
-        
         <div
-          className="transform group-hover:scale-105 transition-transform absolute top-0 right-0 flex justify-center items-center 
-                        bg-black w-6  h-6 rounded-full border-[1px] border-white m-2 p-1 cursor-pointer "
-          
+          className="transform group-hover:scale-105 transition-transform absolute top-0 right-0 flex justify-center items-center bg-black w-6  h-6 rounded-full border-[1px] border-white m-2 p-1 cursor-pointer "
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -61,6 +62,7 @@ export function SearchFiltered() {
       );
     }
   };
+
 
   return (
     <div className="container-grid">
