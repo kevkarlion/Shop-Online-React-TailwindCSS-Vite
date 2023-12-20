@@ -24,7 +24,6 @@ export function useFiltered() {
 
   //Effect para filtrar por categoria
   useEffect(() => {
-    console.log(pathSelect);
     if (pathSelect === `/shop-online-react-tailwindcss-vite/clothes`) {
       setFiltered(`men's clothing`);
     }
