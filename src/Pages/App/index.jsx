@@ -3,7 +3,7 @@ import Home from '../Home';
 import MyAccount from '../MyAccount';
 import MyOrders from '../MyOrders';
 import MyOrderLast from '../MyOrderLast';
-import SignIn from '../SignIn';
+import { Sign } from '../Sign';
 import Navbar from '../../Components/Navbar';
 import { MiContextProvider } from '../../Components/Context';
 import './App.css';
@@ -20,7 +20,7 @@ const AppRoutes = () => {
       <Route path="/my-orders" element={<MyOrders />} />
       <Route path="/my-orders/last" element={<MyOrderLast />} />
       <Route path="/my-orders/:id" element={<MyOrderLast />} />
-      <Route path="/sign-in" element={<SignIn />} />
+      <Route path="/sign" element={<Sign />} />
     </Routes>
   );
 };

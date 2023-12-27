@@ -1,4 +1,5 @@
-import { createContext } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { createContext, useEffect } from "react";
 import { useState } from "react";
 
 
@@ -88,9 +89,37 @@ export const MiContextProvider = ({ children })=> {
     }
 
 
+
+
+    const [login, setLogin] = useState(false);
+
+    const [sign, setSign] = useState({
+        mail: '',
+        password: ''
+    });
+    
+    
+
+
+    
+    //Guarda en el localStorage
+    useEffect(()=>{
+        localStorage.setItem('login', JSON.stringify(login));
+        if (login === true && sign.mail !== '' && sign.password !== '') {
+            localStorage.setItem('sign', JSON.stringify(sign));
+            setSignStorage(JSON.parse(localStorage.getItem('sign'))); //signStorage actualizado
+        }
+    }, [login]);
+    
+
   
 
-
+    const [signStorage, setSignStorage] = useState({});
+    useEffect(()=>{
+        if(sign.mail === '' && sign.password === '' ) {
+            setSignStorage(JSON.parse(localStorage.getItem('sign'))); //Primera vez que inicia la app
+        }
+    }, []);
 
     
     return (
@@ -116,7 +145,12 @@ export const MiContextProvider = ({ children })=> {
             find,
             setFind,
             clothes,
-            setClothes
+            setClothes,
+            login,
+            setLogin,
+            sign,
+            setSign,
+            signStorage
         }}>
             { children }
         </MiContext.Provider>
