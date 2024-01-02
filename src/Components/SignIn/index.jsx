@@ -24,14 +24,16 @@ export function SignIn (){
                     className="border mb-2 outline-none rounded-lg pl-2 m-2"
                     type="text"
                     placeholder={context.signStorage.mail}
+                    disabled
     
                    
                     />
                     <label htmlFor="" className="mt-6">Password</label>
                     <input
                     className="border outline-none rounded-lg pl-2 m-2"
-                    type="text"
-                    placeholder={context.signStorage.password}
+                    type="password"
+                    placeholder='**********'
+                    disabled
                     
                     />
                 </div>

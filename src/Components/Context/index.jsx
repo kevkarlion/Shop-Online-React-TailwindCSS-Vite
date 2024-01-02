@@ -99,9 +99,6 @@ export const MiContextProvider = ({ children })=> {
     });
     
     
-
-
-    
     //Guarda en el localStorage
     useEffect(()=>{
         localStorage.setItem('login', JSON.stringify(login));
@@ -111,8 +108,6 @@ export const MiContextProvider = ({ children })=> {
         }
     }, [login]);
     
-
-  
 
     const [signStorage, setSignStorage] = useState({});
     useEffect(()=>{
