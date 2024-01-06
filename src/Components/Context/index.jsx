@@ -88,6 +88,8 @@ export const MiContextProvider = ({ children }) => {
 
 
 
+  const [specialVar, setSpecialVar] = useState(true);
+
     
 
   //Guarda en el localStorage
@@ -97,6 +99,7 @@ export const MiContextProvider = ({ children }) => {
         // const signStorage = JSON.parse(localStorage.getItem('sign'));
 
         const signStorage = JSON.parse(localStorage.getItem('sign')); //la primera vez que inicia sesion
+        
         console.log("signStorage", signStorage);
         if ( signStorage === null ) { 
             localStorage.setItem("sign", JSON.stringify(sign));
@@ -122,11 +125,14 @@ export const MiContextProvider = ({ children }) => {
           setLogin(loginLocalStorage);
         }
 
-        if( login === false && sign.mail !== "" && sign.password !== "") {
-          localStorage.setItem('login', JSON.stringify(login));
+      
+
+        const loginStorage = JSON.parse(localStorage.getItem('login'));
+        if (loginStorage === false) {
+            setLogin(false);
         }
        
-    }, [login]);
+    }, [login, specialVar]);
 
 
 
@@ -170,6 +176,8 @@ export const MiContextProvider = ({ children }) => {
             setLogin,
             sign,
             setSign,
+            specialVar,
+            setSpecialVar
         }}
         >
         {children}

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import { MiContext } from "../../Components/Context";
 import { useContext } from "react";
 
@@ -9,8 +9,8 @@ export const Navbar = () => {
 
 
   const logOut = () => {
-    
-    context.setLogin(false);
+      localStorage.setItem('login', JSON.stringify(false));
+      context.specialVar = JSON.parse(localStorage.getItem('login'))
   }
 
   const logIn = (text) => {
@@ -103,7 +103,7 @@ export const Navbar = () => {
         </li>
         <li className="font-normal">
           <NavLink
-            to="/sign"
+            to='/sign'
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
             onClick={logOut}
           >
