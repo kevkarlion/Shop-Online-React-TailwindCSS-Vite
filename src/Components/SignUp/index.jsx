@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { MiContext } from "../../Components/Context";
 import { Link } from "react-router-dom";
 
@@ -9,24 +9,26 @@ export function SignUp() {
   //funcion para enviar los datos a localstorage
   const enviarDatos = () => {
     context.setLogin(true);
+    context.setSign(signUp)
   };
 
 
 
 
   const changeMail = (event)=>{
-    context.setSign({
-        ...context.sign,
+    setSignUp({
+        ...signUp,
         mail: event.target.value
     });
   }
   const changePassword = (event)=>{
-    context.setSign({
-        ...context.sign,
+    setSignUp({
+        ...signUp,
         password: event.target.value
     });
   }
 
+  const [signUp, setSignUp] = useState(context.sign);
 
 
   //Formulario creacion de cuenta
@@ -45,7 +47,7 @@ export function SignUp() {
                 type="text"
                 placeholder=''
                 onChange={changeMail}
-                value={context.sign.mail}
+                // value={context.sign.mail}
                 />
                 <label htmlFor="" className="mt-6">Password</label>
                 <input
@@ -53,7 +55,7 @@ export function SignUp() {
                 type="text"
                 placeholder=''
                 onChange={changePassword}
-                value={context.sign.password}
+                // value={context.sign.password}
                 />
             </div>
             <Link to='/'>

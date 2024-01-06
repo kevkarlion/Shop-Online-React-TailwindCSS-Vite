@@ -2,23 +2,21 @@ import { NavLink } from "react-router-dom";
 import { MiContext } from "../../Components/Context";
 import { useContext } from "react";
 
-export  const Navbar = () => {
+export const Navbar = () => {
   const context = useContext(MiContext);
 
   const activeStyle = "underline underline-offset-4";
 
-  const logIn = (text)=> {
-    return (
-        <NavLink
-        to="/sign"
-       
-        >
-          {text}
-        </NavLink>
-    )
+
+  const logOut = () => {
+    
+    context.setLogin(false);
   }
 
-  
+  const logIn = (text) => {
+    return <NavLink to="/sign">{text}</NavLink>;
+  };
+
   return (
     <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light bg-white">
       <ul className="flex items-center gap-3">
@@ -29,9 +27,7 @@ export  const Navbar = () => {
         <li className="font-normal">
           <NavLink
             to="/"
-            className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+            className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             All
           </NavLink>
@@ -39,9 +35,7 @@ export  const Navbar = () => {
         <li className="font-normal">
           <NavLink
             to="/clothes"
-            className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+            className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Clothes
           </NavLink>
@@ -49,9 +43,7 @@ export  const Navbar = () => {
         <li className="font-normal">
           <NavLink
             to="/jewelery"
-            className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+            className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Jewelery
           </NavLink>
@@ -59,9 +51,7 @@ export  const Navbar = () => {
         <li className="font-normal">
           <NavLink
             to="/electronics"
-            className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+            className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Electronics
           </NavLink>
@@ -69,9 +59,7 @@ export  const Navbar = () => {
         <li className="font-normal">
           <NavLink
             to="/toys"
-            className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+            className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Toys
           </NavLink>
@@ -79,59 +67,47 @@ export  const Navbar = () => {
         <li className="font-normal">
           <NavLink
             to="/others"
-            className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+            className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Others
           </NavLink>
         </li>
       </ul>
       <ul className="flex items-center gap-3 ">
-        <li className="text-black/60">{context.login ? context.signStorage.mail : ''}</li>
+        <li className="text-black/60">
+          {context.login ? context.sign.mail : ""}
+        </li>
         <li className="font-normal">
           {context.login ? (
             <NavLink
               to="/my-orders"
-              className={({ isActive }) =>
-                isActive ? activeStyle : undefined
-              }
+              className={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
               My Orders
             </NavLink>
-
           ) : (
-            <>
-              {logIn('My Orders')}
-            </>
+            <>{logIn("My Orders")}</>
           )}
         </li>
         <li className="font-normal">
           {context.login ? (
             <NavLink
               to="/my-account"
-              className={({ isActive }) =>
-                isActive ? activeStyle : undefined
-              }
+              className={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
               My Account
             </NavLink>
-
           ) : (
-            <>
-              {logIn('My Account')}
-            </>
+            <>{logIn("My Account")}</>
           )}
         </li>
         <li className="font-normal">
           <NavLink
             to="/sign"
-            className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
-            onClick={() => context.setLogin(false)}
+            className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={logOut}
           >
-            {context.login? "Sign out" : "Sign in"}
+            {context.login ? "Sign out" : "Sign in"}
           </NavLink>
         </li>
         <li className="flex gap-3 ">
@@ -156,6 +132,6 @@ export  const Navbar = () => {
       </ul>
     </nav>
   );
-}
+};
 
 export default Navbar;
