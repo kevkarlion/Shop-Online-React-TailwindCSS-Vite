@@ -1,17 +1,25 @@
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { MiContext } from "../../Components/Context";
 import { useContext } from "react";
 
 export const Navbar = () => {
   const context = useContext(MiContext);
 
+  
+
   const activeStyle = "underline underline-offset-4";
 
-
   const logOut = () => {
-      localStorage.setItem('login', JSON.stringify(false));
-      context.specialVar = JSON.parse(localStorage.getItem('login'))
-  }
+    const loginStorage = JSON.parse(localStorage.getItem("login"));
+    console.log('loginStorage antes del condicional',loginStorage)
+    if ( loginStorage ) {
+      localStorage.setItem("login", JSON.stringify(false));
+      context.setLogin(false);
+      console.log('function logOut')
+      // console.log('localStorage de login',localStorage.getItem(JSON.parse('login')));
+      context.setSpecialVar(false);
+    }
+  };
 
   const logIn = (text) => {
     return <NavLink to="/sign">{text}</NavLink>;
@@ -102,13 +110,26 @@ export const Navbar = () => {
           )}
         </li>
         <li className="font-normal">
-          <NavLink
-            to='/sign'
-            className={({ isActive }) => (isActive ? activeStyle : undefined)}
-            onClick={logOut}
-          >
-            {context.login ? "Sign out" : "Sign in"}
-          </NavLink>
+          {context.login ? (
+            <NavLink
+              to="/sign"
+              className={({ isActive }) => (isActive ? activeStyle : undefined)}
+              
+            >
+              <p onClick={() => {
+                logOut();
+                console.log('di click en sign out');
+              }}>Sign out</p>
+            </NavLink>
+          ) : (
+            <NavLink
+              to="/sign"
+              className={({ isActive }) => (isActive ? activeStyle : undefined)}
+              
+            >
+              Sign in
+            </NavLink>
+          )}
         </li>
         <li className="flex gap-3 ">
           <div>

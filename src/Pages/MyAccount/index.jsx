@@ -3,43 +3,53 @@ import { MiContext } from "../../Components/Context";
 import { useContext, useState } from "react";
 
 function MyAccount() {
-
   const context = useContext(MiContext);
 
-  const signStorage = JSON.parse(localStorage.getItem('sign'));
+  const signStorage = JSON.parse(localStorage.getItem("sign"));
 
   const stateSign = signStorage;
   const [stateInput, setStateInput] = useState(stateSign);
 
+  const [hableButtonMail, setHandleButtonMail] = useState("Editar");
+  const [hableButtonPass, setHandleButtonPass] = useState("Editar");
 
- 
-  const [hableButton, setHandleButton] = useState('Editar');
-
-
-  const [disabled, setDisabled] = useState(true);
-  const handleDisabled = ()=>{
-    setDisabled(!disabled);
-    if(disabled === true){
-      setHandleButton('Guardar');
-      console.log('stateInput',stateInput);
-      
-    }else{
-      setHandleButton('Editar');
+  const [disabledMail, setDisabledMail] = useState(true);
+  const [disabledPass, setDisabledPass] = useState(true);
+  const handleDisabledMail = () => {
+    setDisabledMail(!disabledMail);
+    if (disabledMail === true) {
+      setHandleButtonMail("Guardar");
+      console.log("stateInput", stateInput);
+    } else {
+      setHandleButtonMail("Editar");
       context.setSign(stateInput);
     }
-  }
+  };
 
-  const handleInput = (e)=>{
+  const handleDisabledPass = () => {
+    setDisabledPass(!disabledPass);
+    if (disabledPass === true) {
+      setHandleButtonPass("Guardar");
+      console.log("stateInput", stateInput);
+    } else {
+      setHandleButtonPass("Editar");
+      context.setSign(stateInput);
+    }
+  };
+
+  const handleInputMail = (e) => {
     setStateInput({
       ...stateInput,
-      mail: e.target.value
+      mail: e.target.value,
     });
-    
-  }
+  };
 
-  
-
-
+  const handleInputPass = (e) => {
+    setStateInput({
+      ...stateInput,
+      password: e.target.value,
+    });
+  };
 
   return (
     <>
@@ -48,28 +58,43 @@ function MyAccount() {
           My Account
         </p>
         <form className="flex justify-center w-[700px] h-[300px]">
-          <div className="flex flex-col justify-center items-center h-full w-[400px]">
-           
-
-            <div className="flex justify-start w-full mb-2">
-              <div className="flex grow justify-end mr-2">
-                <label className="" htmlFor="" >Mail</label>
-              </div>
-              <div className="flex justify-end">
-                <input className=" h-[35px] " type="text" value={stateInput.mail} disabled={disabled} onChange={handleInput}/>
-                <button onClick={handleDisabled} className="ml-4" type="button">{hableButton}</button>
-              </div>
-            </div>
-            <div className="flex justify-between w-full">
-              <div className="flex grow justify-end mr-2">
-                <label className="" htmlFor="" >Password</label>
-              </div>
-              <div className="flex justify-end">
-                <input className=" h-[35px]" type="text"  disabled value={stateInput.password}/>
-                <button className="ml-4" type="button">Editar</button>
-              </div>
+          <div className="flex flex-col justify-center items-center h-full w-[500px]">
+            {/* Uso de Gris con Tailwind */}
+            <div className="grid grid-cols-[100px_220px_80px] w-full mb-4  h-[45px] justify-items-center items-center">
+              <label className="justify-self-end font-semibold	" htmlFor="">
+                Mail:
+              </label>
+              <input
+                className="border-none focus:outline-none"
+                type="text"
+                value={stateInput.mail}
+                disabled={disabledMail}
+                onChange={handleInputMail}
+              />
+              <button onClick={handleDisabledMail} className="bg-blue-500 text-white p-[5px] rounded-md w-[73px]" type="button">
+                {hableButtonMail}
+              </button>
             </div>
 
+            <div className="grid grid-cols-[100px_220px_80px] w-full mb-2  h-[45px]  justify-items-center items-center">
+              <label className="justify-self-end font-semibold" htmlFor="">
+                Password:
+              </label>
+              <input
+                className="border-none focus:outline-none"
+                type="text"
+                disabled={disabledPass}
+                value={stateInput.password}
+                onChange={handleInputPass}
+              />
+              <button
+                onClick={handleDisabledPass}
+                className="bg-blue-500 text-white p-[5px] rounded-md w-[73px]"
+                type="button"
+              >
+                {hableButtonPass}
+              </button>
+            </div>
           </div>
         </form>
       </Layout>
