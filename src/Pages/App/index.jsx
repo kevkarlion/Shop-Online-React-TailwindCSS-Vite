@@ -28,7 +28,7 @@ const AppRoutes = () => {
 const App = () => {   
   return (
     <MiContextProvider>
-      <BrowserRouter basename='/shop-online-react-tailwindcss-vite/'>
+      <BrowserRouter basename='/shopi-online/'>
         <AppRoutes />
         <Navbar />
 
