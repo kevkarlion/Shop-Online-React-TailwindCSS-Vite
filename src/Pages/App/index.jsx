@@ -31,7 +31,6 @@ const App = () => {
       <BrowserRouter basename='/shopi-online/'>
         <AppRoutes />
         <Navbar />
-
       </BrowserRouter>
     </MiContextProvider>
   );
