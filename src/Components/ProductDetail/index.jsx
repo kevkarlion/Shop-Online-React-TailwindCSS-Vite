@@ -112,7 +112,7 @@ export const ProductDetail = () => {
         </p>
       )}
       <button
-        className="button p-4   border rounded-lg
+        className="button p-4 w-full  border-transparent rounded-lg
        bg-black text-slate-50 font-bold"
       >
         <NavLink to="/my-orders/last" onClick={() => checkout()}>

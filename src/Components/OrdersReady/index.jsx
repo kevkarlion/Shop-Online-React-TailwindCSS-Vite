@@ -3,7 +3,6 @@ import { MiContext } from "../Context";
 import { Link } from "react-router-dom";
 import { IoLogoUsd } from "react-icons/io";
 
-
 //Aca va a ir el detalle de las ordenes
 //listas
 
@@ -24,7 +23,7 @@ export function OrdersReady() {
     items.forEach((e) => {
       total = total + e.price;
     });
-    return total;
+    return total.toFixed(2);
   };
 
   const date = new Date();
@@ -45,7 +44,7 @@ export function OrdersReady() {
               <p className="flex justify-center w-full text-white ">
                 {date.toLocaleDateString()}
               </p>
-              
+
               {items.length === 1 ? (
                 <p className="flex font-bold text-lg text-white w-full justify-center">
                   {items.length} Artículo
@@ -57,7 +56,7 @@ export function OrdersReady() {
               )}
             </div>
             <p className="flex items-center justify-center	font-bold border-solid border-black bg-black border-[1px] rounded-lg text-white w-auto p-2 h-auto ">
-              Total  <IoLogoUsd style={{marginLeft: "8px"}}/> {price(items)}
+              Total <IoLogoUsd style={{ marginLeft: "8px" }} /> {price(items)}
             </p>
           </Link>
         </div>

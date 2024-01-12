@@ -11,12 +11,11 @@ export const Navbar = () => {
 
   const logOut = () => {
     const loginStorage = JSON.parse(localStorage.getItem("login"));
-    console.log('loginStorage antes del condicional',loginStorage)
+   
     if ( loginStorage ) {
       localStorage.setItem("login", JSON.stringify(false));
       context.setLogin(false);
-      console.log('function logOut')
-      // console.log('localStorage de login',localStorage.getItem(JSON.parse('login')));
+   
       context.setSpecialVar(false);
     }
   };
@@ -118,7 +117,7 @@ export const Navbar = () => {
             >
               <p onClick={() => {
                 logOut();
-                console.log('di click en sign out');
+             
               }}>Sign out</p>
             </NavLink>
           ) : (

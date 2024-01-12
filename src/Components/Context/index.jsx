@@ -94,8 +94,7 @@ export const MiContextProvider = ({ children }) => {
   useEffect(() => {
     const loginStorage = localStorage.getItem('login');
     const signStorage = localStorage.getItem('sign');
-    console.log('loginStorage',loginStorage)
-    console.log('signStorage',signStorage)
+   
     if (loginStorage === null && signStorage === null ) {
       localStorage.setItem("login", JSON.stringify(false));
       localStorage.setItem("sign", JSON.stringify({ mail: "", password: "" }));
@@ -108,23 +107,16 @@ export const MiContextProvider = ({ children }) => {
 
       
       try {
-        console.log("sign", sign);
-        console.log("login", login);
+       
         // const signStorage = JSON.parse(localStorage.getItem('sign'));
         const signStorage = JSON.parse(localStorage.getItem('sign')); //la primera vez que inicia sesion
-        console.log("signStorage", signStorage);
-        // if ( signStorage === null ) { 
-        //     localStorage.setItem("sign", JSON.stringify(sign));
-        //     localStorage.setItem("login", JSON.stringify(login));
-        //     console.log('no tengo datos !! ');
-        // }
+        
+      
         //Si tengo los datos de user, cargo los datos en el sign
         if ( signStorage ) {
           if (signStorage.mail !== '' && signStorage.password !== '' ) {
               setSign(signStorage);
-              console.log(signStorage);
-              console.log('tengo datos ! ')
-              console.log('los datos de sign',sign);
+             
           }
         }
         if (login === true && sign.mail !== "" && sign.password !== "") { // la primera vez que inicia sesion  
@@ -135,10 +127,7 @@ export const MiContextProvider = ({ children }) => {
         if ( loginStorage ){
           setLogin(true);
         }
-        // } else {
-        //   console.log('login que pudo haber sido false o true, es false')
-        //   setLogin(false);
-        // }
+       
 
       } catch (error) {
         console.log(error)
