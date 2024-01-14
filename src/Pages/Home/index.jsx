@@ -12,6 +12,7 @@ function Home() {
   return (
     <>
       <Layout>
+       
         <p className=" text-lg font-bold">Exclusive Products</p>
         <p className="text-xs">Find your favorite exclusive product</p>
         {/* busqueda segun input */}

@@ -28,7 +28,8 @@ const AppRoutes = () => {
 const App = () => {   
   return (
     <MiContextProvider>
-      <BrowserRouter basename='/shopi-online/'>
+      {/*  El basename se utiliza para especificar la porción de la URL que debería ser considerada como la "raíz" por el enrutador */}
+      <BrowserRouter basename='/shopi-online/'> 
         <AppRoutes />
         <Navbar />
       </BrowserRouter>

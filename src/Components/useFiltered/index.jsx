@@ -24,18 +24,18 @@ export function useFiltered() {
 
   //Effect para filtrar por categoria
   useEffect(() => {
-    if (pathSelect === `/shop-online-react-tailwindcss-vite/clothes`) {
+    if (pathSelect === `/shopi-online/clothes`) {
       setFiltered(`men's clothing`);
     }
-    if (pathSelect === "/shop-online-react-tailwindcss-vite/jewelery") {
+    if (pathSelect === "/shopi-online/jewelery") {
       setFiltered(`jewelery`);
     }
-    if (pathSelect === "/shop-online-react-tailwindcss-vite/electronics") {
+    if (pathSelect === "/shopi-online/electronics") {
       setFiltered(`electronics`);
     }
     if (
-      pathSelect === "/shop-online-react-tailwindcss-vite/" ||
-      pathSelect === "/shop-online-react-tailwindcss-vite"
+      pathSelect === "/shopi-online/" ||
+      pathSelect === "/shopi-online"
     ) {
       setFiltered(true);
     }

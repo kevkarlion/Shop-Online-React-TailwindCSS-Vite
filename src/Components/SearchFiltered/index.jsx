@@ -67,7 +67,6 @@ export function SearchFiltered() {
           className="flex flex-col bg-white h-full rounded-lg w-[160px]  duration-300 hover:shadow-2xl group transform transition-transform hover:scale-105 ease-in-out overflow-hidden"
         >
           <figure className="relative w-full h-full  p-4	transform group-hover:scale-105 transition-transform">
-            
             {/* Si no hay login, renderiza el sing in o sign up */}
             {context.login === false ? (
               <Link to="/sign">
@@ -77,7 +76,7 @@ export function SearchFiltered() {
                   alt="Product Image"
                 />
                 <div
-                className="transform group-hover:scale-105 transition-transform absolute top-0 right-0 flex justify-center items-center 
+                  className="transform group-hover:scale-105 transition-transform absolute top-0 right-0 flex justify-center items-center 
                       bg-white w-6  h-6 rounded-full border-[1px] border-black  m-2 p-1 cursor-pointer "
                 >
                   <svg
